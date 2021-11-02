@@ -1,0 +1,103 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/20.1/assignment_3_3/simulation/qsim
+vassignment_3_3
+Z1 !s110 1632882419
+!i10b 1
+!s100 L705lOA>H[db6f7R7JV6R1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ID^zNJZgok^b3m>6YWk<672
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1632882418
+Z4 8assignment_3_3.vo
+Z5 Fassignment_3_3.vo
+!i122 8
+L0 32 373
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1632882419.000000
+Z8 !s107 assignment_3_3.vo|
+Z9 !s90 -work|work|assignment_3_3.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vassignment_3_3_vlg_vec_tst
+R1
+!i10b 1
+!s100 ]R[PFg9=5[VNDX8VRo11@1
+R2
+I?6RPShSleH4;Jm3YPM]zI2
+R3
+R0
+w1632882416
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+!i122 9
+L0 30 114
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R10
+R11
+vtwo_bit_comparator
+Z12 !s110 1632880257
+!i10b 1
+!s100 TeE2nG_iIJ>aa?7@]U^941
+R2
+IW<JMk]Bh1_giGl<dMPchM1
+R3
+R0
+w1632880256
+R4
+R5
+!i122 2
+L0 32 254
+R6
+r1
+!s85 0
+31
+Z13 !s108 1632880257.000000
+R8
+R9
+!i113 1
+R10
+R11
+vtwo_bit_comparator_vlg_vec_tst
+R12
+!i10b 1
+!s100 D_Z@OSVXIUGO7e?VffUIb3
+R2
+IPSBY_OkVl2T5Ca40Jf=ah2
+R3
+R0
+w1632880254
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+!i122 3
+L0 30 65
+R6
+r1
+!s85 0
+31
+R13
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+R11
