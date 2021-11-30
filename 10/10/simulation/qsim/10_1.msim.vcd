@@ -1,0 +1,779 @@
+$comment
+	File created using the following command:
+		vcd file 10_1.msim.vcd -direction
+$end
+$date
+	Tue Nov 09 21:18:00 2021
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module assignment10_2_vlg_vec_tst $end
+$var reg 1 ! clk20 $end
+$var reg 1 " eight $end
+$var reg 1 # five $end
+$var reg 1 $ four $end
+$var reg 1 % nine $end
+$var reg 1 & one $end
+$var reg 1 ' rst $end
+$var reg 1 ( seven $end
+$var reg 1 ) six $end
+$var reg 1 * three $end
+$var reg 1 + two $end
+$var reg 1 , zero $end
+$var wire 1 - COM1 $end
+$var wire 1 . COM2 $end
+$var wire 1 / COM3 $end
+$var wire 1 0 COM4 $end
+$var wire 1 1 COM5 $end
+$var wire 1 2 COM6 $end
+$var wire 1 3 COM7 $end
+$var wire 1 4 COM8 $end
+$var wire 1 5 dout [6] $end
+$var wire 1 6 dout [5] $end
+$var wire 1 7 dout [4] $end
+$var wire 1 8 dout [3] $end
+$var wire 1 9 dout [2] $end
+$var wire 1 : dout [1] $end
+$var wire 1 ; dout [0] $end
+
+$scope module i1 $end
+$var wire 1 < gnd $end
+$var wire 1 = vcc $end
+$var wire 1 > unknown $end
+$var tri1 1 ? devclrn $end
+$var tri1 1 @ devpor $end
+$var tri1 1 A devoe $end
+$var wire 1 B inst111|inst3|inst~regout $end
+$var wire 1 C inst111|inst3|inst1~regout $end
+$var wire 1 D inst111|inst3|inst2~regout $end
+$var wire 1 E inst111|inst3|inst3~regout $end
+$var wire 1 F inst2|inst3~regout $end
+$var wire 1 G clk20~combout $end
+$var wire 1 H rst~combout $end
+$var wire 1 I inst8|inst~regout $end
+$var wire 1 J inst8|inst1~regout $end
+$var wire 1 K inst18~combout $end
+$var wire 1 L inst20~0_combout $end
+$var wire 1 M inst20~1_combout $end
+$var wire 1 N inst20~2_combout $end
+$var wire 1 O seven~combout $end
+$var wire 1 P six~combout $end
+$var wire 1 Q two~combout $end
+$var wire 1 R inst11~1_combout $end
+$var wire 1 S three~combout $end
+$var wire 1 T zero~combout $end
+$var wire 1 U four~combout $end
+$var wire 1 V nine~combout $end
+$var wire 1 W one~combout $end
+$var wire 1 X inst11~0_combout $end
+$var wire 1 Y eight~combout $end
+$var wire 1 Z inst11~2_combout $end
+$var wire 1 [ five~combout $end
+$var wire 1 \ inst2|inst2~regout $end
+$var wire 1 ] inst2|inst $end
+$var wire 1 ^ inst111|inst|inst1~regout $end
+$var wire 1 _ inst111|inst1|inst1~regout $end
+$var wire 1 ` inst111|inst2|inst1~regout $end
+$var wire 1 a inst111|inst18|inst10~0 $end
+$var wire 1 b inst111|inst18|inst10~1 $end
+$var wire 1 c inst|inst13~0_combout $end
+$var wire 1 d inst111|inst|inst2~regout $end
+$var wire 1 e inst111|inst1|inst2~regout $end
+$var wire 1 f inst111|inst2|inst2~regout $end
+$var wire 1 g inst111|inst18|inst11~0 $end
+$var wire 1 h inst111|inst18|inst11~1 $end
+$var wire 1 i inst111|inst|inst3~regout $end
+$var wire 1 j inst111|inst1|inst3~regout $end
+$var wire 1 k inst111|inst2|inst3~regout $end
+$var wire 1 l inst111|inst18|inst12~0 $end
+$var wire 1 m inst111|inst18|inst12~1 $end
+$var wire 1 n inst111|inst|inst~regout $end
+$var wire 1 o inst111|inst1|inst~regout $end
+$var wire 1 p inst111|inst2|inst~regout $end
+$var wire 1 q inst111|inst18|inst9~0 $end
+$var wire 1 r inst111|inst18|inst9~1 $end
+$var wire 1 s inst44|WideOr0~0_combout $end
+$var wire 1 t inst44|WideOr1~0_combout $end
+$var wire 1 u inst44|WideOr2~0_combout $end
+$var wire 1 v inst44|WideOr3~0_combout $end
+$var wire 1 w inst44|WideOr4~0_combout $end
+$var wire 1 x inst44|WideOr5~0_combout $end
+$var wire 1 y inst44|WideOr6~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+1-
+1.
+1/
+10
+01
+12
+13
+14
+0;
+1:
+19
+18
+17
+16
+15
+0<
+1=
+x>
+1?
+1@
+1A
+0B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+1R
+0S
+0T
+0U
+0V
+0W
+1X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+0y
+$end
+#20000
+1!
+1,
+1G
+1T
+1Z
+1I
+1L
+1K
+11
+02
+#40000
+0!
+0G
+#60000
+1!
+1G
+1\
+1J
+0I
+1]
+1M
+0L
+12
+03
+#80000
+0!
+0G
+#90000
+0,
+0T
+0Z
+#100000
+1!
+1G
+1F
+0\
+1I
+0]
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#120000
+0!
+0G
+#140000
+1!
+1G
+0F
+0J
+0I
+1r
+0q
+1m
+0l
+0g
+1b
+0a
+0N
+0K
+1h
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0m
+0h
+0b
+01
+14
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+15
+16
+17
+18
+19
+1:
+#160000
+0!
+0G
+#180000
+1$
+1!
+1U
+1G
+1I
+1L
+1K
+11
+02
+#200000
+0!
+0G
+#220000
+1!
+1G
+1\
+1J
+0I
+1]
+1M
+0L
+12
+03
+#240000
+0!
+0G
+#250000
+0$
+0U
+#260000
+1!
+1G
+1F
+0\
+1I
+0]
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#280000
+0!
+0G
+#300000
+1!
+1G
+0F
+0J
+0I
+1r
+0q
+1m
+0l
+0g
+1b
+0a
+0N
+0K
+1h
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0m
+0h
+0b
+01
+14
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+15
+16
+17
+18
+19
+1:
+#320000
+0!
+0G
+#340000
+1!
+1G
+1I
+1L
+1K
+11
+02
+#360000
+0!
+0G
+#380000
+1"
+1!
+1Y
+1G
+1Z
+1J
+0I
+1M
+0L
+12
+03
+#400000
+0!
+0G
+#420000
+1!
+1G
+1\
+1I
+1]
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#440000
+0!
+0G
+#460000
+0"
+1!
+0Y
+1G
+0Z
+1i
+1F
+0J
+0I
+1r
+0q
+1m
+0g
+1b
+0a
+0N
+0K
+1h
+0]
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0h
+0b
+01
+14
+1y
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+1;
+15
+16
+17
+18
+19
+1:
+#480000
+0!
+0G
+#500000
+1!
+1G
+0\
+1I
+0l
+1L
+1K
+0m
+11
+02
+0y
+0;
+#520000
+0!
+0G
+#540000
+1!
+1G
+0F
+1J
+0I
+1M
+0L
+12
+03
+#560000
+0!
+0G
+#580000
+1!
+1G
+1I
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#600000
+0!
+0G
+#620000
+1!
+1G
+0J
+0I
+1r
+0q
+1m
+0g
+1b
+0a
+0N
+0K
+1h
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0h
+0b
+01
+14
+1y
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+1;
+15
+16
+17
+18
+19
+1:
+#640000
+0!
+0G
+#660000
+1!
+1G
+1I
+0l
+1L
+1K
+0m
+11
+02
+0y
+0;
+#680000
+0!
+0G
+#700000
+1!
+1G
+1J
+0I
+1M
+0L
+12
+03
+#720000
+0!
+0G
+#740000
+1!
+1G
+1I
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#760000
+0!
+0G
+#780000
+1!
+1G
+0J
+0I
+1r
+0q
+1m
+0g
+1b
+0a
+0N
+0K
+1h
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0h
+0b
+01
+14
+1y
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+1;
+15
+16
+17
+18
+19
+1:
+#800000
+0!
+0G
+#820000
+1!
+1G
+1I
+0l
+1L
+1K
+0m
+11
+02
+0y
+0;
+#840000
+0!
+0G
+#860000
+1!
+1G
+1J
+0I
+1M
+0L
+12
+03
+#880000
+0!
+0G
+#900000
+1!
+1G
+1I
+1q
+1l
+1g
+1a
+1N
+0M
+13
+04
+#920000
+0!
+0G
+#940000
+1!
+1G
+0J
+0I
+1r
+0q
+1m
+0g
+1b
+0a
+0N
+0K
+1h
+1x
+1w
+1v
+1u
+1t
+1s
+0r
+0h
+0b
+01
+14
+1y
+0x
+0w
+0v
+0u
+0t
+0s
+05
+06
+07
+08
+09
+0:
+1;
+15
+16
+17
+18
+19
+1:
+#960000
+0!
+0G
+#980000
+1!
+1G
+1I
+0l
+1L
+1K
+0m
+11
+02
+0y
+0;
+#1000000

@@ -1,0 +1,403 @@
+|assignment10_2
+COM1 <= <VCC>
+COM2 <= <VCC>
+COM3 <= <VCC>
+COM4 <= <VCC>
+COM5 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+clk20 => counter4:inst8.clk
+clk20 => fourbit_reg_sram:inst111.clk
+clk20 => trigger:inst2.CLK
+rst => inst122.IN0
+COM6 <= inst121.DB_MAX_OUTPUT_PORT_TYPE
+COM7 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+COM8 <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+dout[0] <= inst23[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= inst23[1].DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= inst23[2].DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= inst23[3].DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= inst23[4].DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= inst23[5].DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= inst23[6].DB_MAX_OUTPUT_PORT_TYPE
+six => inst10.IN0
+six => d2b:inst.d6
+eight => inst10.IN1
+eight => d2b:inst.d8
+nine => inst10.IN2
+nine => d2b:inst.d9
+seven => inst10.IN3
+seven => d2b:inst.d7
+zero => inst9.IN0
+zero => d2b:inst.d0
+two => inst9.IN1
+two => d2b:inst.d2
+one => inst9.IN2
+one => d2b:inst.d1
+three => inst9.IN3
+three => d2b:inst.d3
+four => inst9.IN4
+four => d2b:inst.d4
+five => inst9.IN5
+five => d2b:inst.d5
+
+
+|assignment10_2|counter4:inst8
+dout[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+rst_n => inst.ACLR
+rst_n => inst1.ACLR
+clk => inst.CLK
+clk => inst1.CLK
+
+
+|assignment10_2|segment7:inst44
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|assignment10_2|fourbit_reg_sram:inst111
+DataOut[0] <= mx_4bit_2x1:inst18.m_out[0]
+DataOut[1] <= mx_4bit_2x1:inst18.m_out[1]
+DataOut[2] <= mx_4bit_2x1:inst18.m_out[2]
+DataOut[3] <= mx_4bit_2x1:inst18.m_out[3]
+counterce[0] => mx_4bit_2x1:inst20.ce
+counterce[0] => mx_4bit_2x1:inst19.ce
+counterce[1] => mx_4bit_2x1:inst18.ce
+ce => four_bit_register:inst.Ce
+ce => four_bit_register:inst1.Ce
+ce => four_bit_register:inst2.Ce
+ce => four_bit_register:inst3.Ce
+clk => four_bit_register:inst.CLK
+clk => four_bit_register:inst1.CLK
+clk => four_bit_register:inst2.CLK
+clk => four_bit_register:inst3.CLK
+rst_n => four_bit_register:inst.RST_N
+rst_n => four_bit_register:inst1.RST_N
+rst_n => four_bit_register:inst2.RST_N
+rst_n => four_bit_register:inst3.RST_N
+DataIn[0] => four_bit_register:inst.Din[0]
+DataIn[1] => four_bit_register:inst.Din[1]
+DataIn[2] => four_bit_register:inst.Din[2]
+DataIn[3] => four_bit_register:inst.Din[3]
+
+
+|assignment10_2|fourbit_reg_sram:inst111|mx_4bit_2x1:inst18
+m_out[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+m_out[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+m_out[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+m_out[3] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+ce => inst8.IN0
+ce => inst.IN1
+ce => inst1.IN1
+ce => inst2.IN1
+ce => inst3.IN1
+s0[0] => inst4.IN1
+s0[1] => inst5.IN1
+s0[2] => inst6.IN1
+s0[3] => inst7.IN1
+s1[0] => inst.IN0
+s1[1] => inst1.IN0
+s1[2] => inst2.IN0
+s1[3] => inst3.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|mx_4bit_2x1:inst20
+m_out[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+m_out[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+m_out[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+m_out[3] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+ce => inst8.IN0
+ce => inst.IN1
+ce => inst1.IN1
+ce => inst2.IN1
+ce => inst3.IN1
+s0[0] => inst4.IN1
+s0[1] => inst5.IN1
+s0[2] => inst6.IN1
+s0[3] => inst7.IN1
+s1[0] => inst.IN0
+s1[1] => inst1.IN0
+s1[2] => inst2.IN0
+s1[3] => inst3.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst
+Dout[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+RST_N => inst.ACLR
+RST_N => inst1.ACLR
+RST_N => inst2.ACLR
+RST_N => inst3.ACLR
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+Din[0] => mx_2x1:inst5.s_1
+Din[1] => mx_2x1:inst6.s_1
+Din[2] => mx_2x1:inst7.s_1
+Din[3] => mx_2x1:inst8.s_1
+Ce => mx_2x1:inst5.sel
+Ce => mx_2x1:inst6.sel
+Ce => mx_2x1:inst7.sel
+Ce => mx_2x1:inst8.sel
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst|mx_2x1:inst5
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst|mx_2x1:inst6
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst|mx_2x1:inst7
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst|mx_2x1:inst8
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst1
+Dout[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+RST_N => inst.ACLR
+RST_N => inst1.ACLR
+RST_N => inst2.ACLR
+RST_N => inst3.ACLR
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+Din[0] => mx_2x1:inst5.s_1
+Din[1] => mx_2x1:inst6.s_1
+Din[2] => mx_2x1:inst7.s_1
+Din[3] => mx_2x1:inst8.s_1
+Ce => mx_2x1:inst5.sel
+Ce => mx_2x1:inst6.sel
+Ce => mx_2x1:inst7.sel
+Ce => mx_2x1:inst8.sel
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst1|mx_2x1:inst5
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst1|mx_2x1:inst6
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst1|mx_2x1:inst7
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst1|mx_2x1:inst8
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|mx_4bit_2x1:inst19
+m_out[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+m_out[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+m_out[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+m_out[3] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+ce => inst8.IN0
+ce => inst.IN1
+ce => inst1.IN1
+ce => inst2.IN1
+ce => inst3.IN1
+s0[0] => inst4.IN1
+s0[1] => inst5.IN1
+s0[2] => inst6.IN1
+s0[3] => inst7.IN1
+s1[0] => inst.IN0
+s1[1] => inst1.IN0
+s1[2] => inst2.IN0
+s1[3] => inst3.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst2
+Dout[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+RST_N => inst.ACLR
+RST_N => inst1.ACLR
+RST_N => inst2.ACLR
+RST_N => inst3.ACLR
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+Din[0] => mx_2x1:inst5.s_1
+Din[1] => mx_2x1:inst6.s_1
+Din[2] => mx_2x1:inst7.s_1
+Din[3] => mx_2x1:inst8.s_1
+Ce => mx_2x1:inst5.sel
+Ce => mx_2x1:inst6.sel
+Ce => mx_2x1:inst7.sel
+Ce => mx_2x1:inst8.sel
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst2|mx_2x1:inst5
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst2|mx_2x1:inst6
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst2|mx_2x1:inst7
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst2|mx_2x1:inst8
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst3
+Dout[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+RST_N => inst.ACLR
+RST_N => inst1.ACLR
+RST_N => inst2.ACLR
+RST_N => inst3.ACLR
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+Din[0] => mx_2x1:inst5.s_1
+Din[1] => mx_2x1:inst6.s_1
+Din[2] => mx_2x1:inst7.s_1
+Din[3] => mx_2x1:inst8.s_1
+Ce => mx_2x1:inst5.sel
+Ce => mx_2x1:inst6.sel
+Ce => mx_2x1:inst7.sel
+Ce => mx_2x1:inst8.sel
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst3|mx_2x1:inst5
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst3|mx_2x1:inst6
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst3|mx_2x1:inst7
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|fourbit_reg_sram:inst111|four_bit_register:inst3|mx_2x1:inst8
+m_out <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+s_0 => inst1.IN0
+sel => inst3.IN0
+sel => inst.IN1
+s_1 => inst.IN0
+
+
+|assignment10_2|trigger:inst2
+Dout <= inst.DB_MAX_OUTPUT_PORT_TYPE
+rst_n => inst2.ACLR
+rst_n => inst3.ACLR
+CLK => inst2.CLK
+CLK => inst3.CLK
+Din => inst2.DATAIN
+
+
+|assignment10_2|d2b:inst
+b0 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+d0 => inst20.IN0
+d9 => inst21.IN0
+d9 => inst23.IN0
+d7 => inst55.IN0
+d7 => inst15.IN0
+d7 => inst17.IN0
+d5 => inst55.IN1
+d5 => inst16.IN0
+d3 => inst.IN0
+d3 => inst155.IN0
+d1 => inst.IN1
+b1 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+d6 => inst15.IN1
+d6 => inst17.IN1
+d2 => inst155.IN1
+b2 <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+d4 => inst16.IN1
+b3 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+d8 => inst23.IN1
+
+
