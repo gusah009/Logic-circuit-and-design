@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off quartus -c quartus --vector_source="C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform.vwf" --testbench_file="C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/Waveform.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off quartus -c quartus --vector_source="C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform6.vwf" --testbench_file="C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/Waveform6.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,9 +26,11 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 30 19:34:34 2021
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off quartus -c quartus --vector_source=C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform.vwf --testbench_file=C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/Waveform.vwf.vt
+    Info: Processing started: Tue Dec 07 20:57:51 2021
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off quartus -c quartus --vector_source=C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform6.vwf --testbench_file=C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/Waveform6.vwf.vt
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+ pin "pin_name2[4]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -55,13 +57,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 30 19:34:35 2021
+    Info: Processing started: Tue Dec 07 20:57:52 2021
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/ quartus -c quartus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file quartus.vo in folder "C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4640 megabytes
-    Info: Processing ended: Tue Nov 30 19:34:35 2021
+    Info: Processing ended: Tue Dec 07 20:57:52 2021
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -85,50 +87,51 @@ Reading pref.tcl
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:34:36 on Nov 30,2021
+# Start time: 20:57:53 on Dec 07,2021
 # vlog -work work quartus.vo 
-# -- Compiling module adder_8bit_2bit
+# -- Compiling module decimal_to_alphabet
 # 
 # Top level modules:
-# 	adder_8bit_2bit
-# End time: 19:34:36 on Nov 30,2021, Elapsed time: 0:00:00
+# 	decimal_to_alphabet
+# End time: 20:57:53 on Dec 07,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:34:36 on Nov 30,2021
-# vlog -work work Waveform.vwf.vt 
-# -- Compiling module adder_8bit_2bit_vlg_vec_tst
+# Start time: 20:57:53 on Dec 07,2021
+# vlog -work work Waveform6.vwf.vt 
+# -- Compiling module decimal_to_alphabet_vlg_vec_tst
 # 
 # Top level modules:
-# 	adder_8bit_2bit_vlg_vec_tst
-# End time: 19:34:36 on Nov 30,2021, Elapsed time: 0:00:00
+# 	decimal_to_alphabet_vlg_vec_tst
+# End time: 20:57:53 on Dec 07,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.adder_8bit_2bit_vlg_vec_tst 
-# Start time: 19:34:36 on Nov 30,2021
-# Loading work.adder_8bit_2bit_vlg_vec_tst
-# Loading work.adder_8bit_2bit
+# vsim -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.decimal_to_alphabet_vlg_vec_tst 
+# Start time: 20:57:53 on Dec 07,2021
+# Loading work.decimal_to_alphabet_vlg_vec_tst
+# Loading work.decimal_to_alphabet
 # Loading maxv_ver.maxv_io
 # Loading maxv_ver.maxv_lcell
 # Loading maxv_ver.maxv_asynch_lcell
 # Loading maxv_ver.maxv_lcell_register
 # after#25
-# ** Note: $finish    : Waveform.vwf.vt(47)
-#    Time: 1 us  Iteration: 0  Instance: /adder_8bit_2bit_vlg_vec_tst
-# End time: 19:34:36 on Nov 30,2021, Elapsed time: 0:00:00
+
+# ** Note: $finish    : Waveform6.vwf.vt(77)
+#    Time: 1 us  Iteration: 0  Instance: /decimal_to_alphabet_vlg_vec_tst
+# End time: 20:57:53 on Dec 07,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform.vwf...
+Reading C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/Waveform6.vwf...
 
 Reading C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/quartus.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/quartus_20211130193437.sim.vwf
+Writing the resulting VWF to C:/Users/user/Desktop/Logic-circuit-and-design/term_project/quartus/simulation/qsim/quartus_20211207205754.sim.vwf
 
 Finished VCD to VWF conversion.
 
