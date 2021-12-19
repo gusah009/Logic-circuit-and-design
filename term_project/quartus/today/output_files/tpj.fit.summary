@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Nov 30 20:01:47 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : tpj
+Top-level Entity Name : tpj
+Family : MAX V
+Device : 5M1270ZF256C4
+Timing Models : Final
+Total logic elements : 84 / 1,270 ( 7 % )
+Total pins : 141 / 211 ( 67 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

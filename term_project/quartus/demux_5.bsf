@@ -1,0 +1,121 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 312 240)
+	(text "demux_5" (rect 5 0 85 23)(font "Intel Clear" (font_size 6)))
+	(text "inst" (rect 8 197 38 220)(font "Intel Clear" (font_size 6)))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Din[7..0]" (rect 0 0 94 30)(font "Intel Clear" (font_size 8)))
+		(text "Din[7..0]" (rect 21 27 115 57)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reg_ce" (rect 0 0 74 30)(font "Intel Clear" (font_size 8)))
+		(text "reg_ce" (rect 21 43 95 73)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "CE_in[2..0]" (rect 0 0 119 30)(font "Intel Clear" (font_size 8)))
+		(text "CE_in[2..0]" (rect 21 59 140 89)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 296 32)
+		(output)
+		(text "Dout0[7..0]" (rect 0 0 125 30)(font "Intel Clear" (font_size 8)))
+		(text "Dout0[7..0]" (rect 150 27 275 57)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 32)(pt 280 32)(line_width 3))
+	)
+	(port
+		(pt 296 48)
+		(output)
+		(text "ce0" (rect 0 0 38 30)(font "Intel Clear" (font_size 8)))
+		(text "ce0" (rect 237 43 275 73)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 48)(pt 280 48))
+	)
+	(port
+		(pt 296 64)
+		(output)
+		(text "Dout1[7..0]" (rect 0 0 125 30)(font "Intel Clear" (font_size 8)))
+		(text "Dout1[7..0]" (rect 150 59 275 89)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 64)(pt 280 64)(line_width 3))
+	)
+	(port
+		(pt 296 80)
+		(output)
+		(text "ce1" (rect 0 0 38 30)(font "Intel Clear" (font_size 8)))
+		(text "ce1" (rect 237 75 275 105)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 80)(pt 280 80))
+	)
+	(port
+		(pt 296 96)
+		(output)
+		(text "Dout2[7..0]" (rect 0 0 125 30)(font "Intel Clear" (font_size 8)))
+		(text "Dout2[7..0]" (rect 150 91 275 121)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 96)(pt 280 96)(line_width 3))
+	)
+	(port
+		(pt 296 112)
+		(output)
+		(text "ce2" (rect 0 0 38 30)(font "Intel Clear" (font_size 8)))
+		(text "ce2" (rect 237 107 275 137)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 112)(pt 280 112))
+	)
+	(port
+		(pt 296 128)
+		(output)
+		(text "Dout3[7..0]" (rect 0 0 125 30)(font "Intel Clear" (font_size 8)))
+		(text "Dout3[7..0]" (rect 150 123 275 153)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 128)(pt 280 128)(line_width 3))
+	)
+	(port
+		(pt 296 144)
+		(output)
+		(text "ce3" (rect 0 0 38 30)(font "Intel Clear" (font_size 8)))
+		(text "ce3" (rect 237 139 275 169)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 144)(pt 280 144))
+	)
+	(port
+		(pt 296 160)
+		(output)
+		(text "Dout4[7..0]" (rect 0 0 125 30)(font "Intel Clear" (font_size 8)))
+		(text "Dout4[7..0]" (rect 150 155 275 185)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 160)(pt 280 160)(line_width 3))
+	)
+	(port
+		(pt 296 176)
+		(output)
+		(text "ce4" (rect 0 0 38 30)(font "Intel Clear" (font_size 8)))
+		(text "ce4" (rect 237 171 275 201)(font "Intel Clear" (font_size 8)))
+		(line (pt 296 176)(pt 280 176))
+	)
+	(drawing
+		(rectangle (rect 16 16 280 208))
+	)
+)

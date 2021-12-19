@@ -1,11 +1,11 @@
 onerror {exit -code 1}
 vlib work
 vlog -work work quartus.vo
-vlog -work work Waveform6.vwf.vt
-vsim -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.decimal_to_alphabet_vlg_vec_tst
+vlog -work work Waveform15.vwf.vt
+vsim -c -t 1ps -L maxv_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.shw_module_vlg_vec_tst
 vcd file -direction quartus.msim.vcd
-vcd add -internal decimal_to_alphabet_vlg_vec_tst/*
-vcd add -internal decimal_to_alphabet_vlg_vec_tst/i1/*
+vcd add -internal shw_module_vlg_vec_tst/*
+vcd add -internal shw_module_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {

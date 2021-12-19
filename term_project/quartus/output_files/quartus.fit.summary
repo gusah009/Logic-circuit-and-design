@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Dec 07 20:56:40 2021
+Fitter Status : Successful - Sun Dec 19 22:50:03 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : quartus
-Top-level Entity Name : decimal_to_alphabet
+Top-level Entity Name : shw_module
 Family : MAX V
-Device : 5M80ZT100C4
+Device : 5M40ZE64C4
 Timing Models : Final
-Total logic elements : 67 / 80 ( 84 % )
-Total pins : 53 / 79 ( 67 % )
+Total logic elements : 19 / 40 ( 48 % )
+Total pins : 26 / 54 ( 48 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
