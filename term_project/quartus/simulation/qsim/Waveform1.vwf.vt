@@ -19,140 +19,208 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/07/2021 18:04:22"
+// Generated on "12/21/2021 17:09:33"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          adder_8bit_2bit
+// Verilog Test Bench (with test vectors) for design :                          sub_module
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module adder_8bit_2bit_vlg_vec_tst();
+module sub_module_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg [7:0] Din1;
-reg [1:0] Din2;
+reg clk;
+reg [7:0] Dst;
+reg is_ADD;
+reg rst;
+reg [7:0] Src;
 // wires                                               
-wire [0:7] Dout;
+wire [7:0] Dout;
 
 // assign statements (if any)                          
-adder_8bit_2bit i1 (
+sub_module i1 (
 // port map - connection between master ports and signals/registers   
-	.Din1(Din1),
-	.Din2(Din2),
-	.Dout(Dout)
+	.clk(clk),
+	.Dout(Dout),
+	.Dst(Dst),
+	.is_ADD(is_ADD),
+	.rst(rst),
+	.Src(Src)
 );
 initial 
 begin 
 #1000000 $finish;
 end 
-// Din1[ 7 ]
+// Dst[ 7 ]
 initial
 begin
-	Din1[7] = 1'b0;
-	Din1[7] = #10000 1'b1;
-	Din1[7] = #90000 1'b0;
-	Din1[7] = #410000 1'b1;
-	Din1[7] = #110000 1'b0;
-	Din1[7] = #230000 1'b1;
-	Din1[7] = #40000 1'b0;
+	Dst[7] = 1'b0;
 end 
-// Din1[ 6 ]
+// Dst[ 6 ]
 initial
 begin
-	Din1[6] = 1'b0;
-	Din1[6] = #510000 1'b1;
-	Din1[6] = #110000 1'b0;
-	Din1[6] = #230000 1'b1;
-	Din1[6] = #40000 1'b0;
+	Dst[6] = 1'b0;
+	Dst[6] = #30000 1'b1;
+	Dst[6] = #70000 1'b0;
 end 
-// Din1[ 5 ]
+// Dst[ 5 ]
 initial
 begin
-	Din1[5] = 1'b0;
-	Din1[5] = #130000 1'b1;
-	Din1[5] = #80000 1'b0;
-	Din1[5] = #640000 1'b1;
-	Din1[5] = #40000 1'b0;
+	Dst[5] = 1'b0;
+	Dst[5] = #30000 1'b1;
+	Dst[5] = #70000 1'b0;
+	Dst[5] = #420000 1'b1;
+	Dst[5] = #90000 1'b0;
 end 
-// Din1[ 4 ]
+// Dst[ 4 ]
 initial
 begin
-	Din1[4] = 1'b0;
-	Din1[4] = #510000 1'b1;
-	Din1[4] = #110000 1'b0;
-	Din1[4] = #230000 1'b1;
-	Din1[4] = #40000 1'b0;
+	Dst[4] = 1'b0;
+	Dst[4] = #30000 1'b1;
+	Dst[4] = #70000 1'b0;
+	Dst[4] = #40000 1'b1;
+	Dst[4] = #70000 1'b0;
+	Dst[4] = #310000 1'b1;
+	Dst[4] = #90000 1'b0;
 end 
-// Din1[ 3 ]
+// Dst[ 3 ]
 initial
 begin
-	Din1[3] = 1'b0;
-	Din1[3] = #230000 1'b1;
-	Din1[3] = #90000 1'b0;
-	Din1[3] = #530000 1'b1;
-	Din1[3] = #40000 1'b0;
+	Dst[3] = 1'b0;
+	Dst[3] = #30000 1'b1;
+	Dst[3] = #70000 1'b0;
+	Dst[3] = #40000 1'b1;
+	Dst[3] = #70000 1'b0;
+	Dst[3] = #150000 1'b1;
+	Dst[3] = #120000 1'b0;
+	Dst[3] = #40000 1'b1;
+	Dst[3] = #90000 1'b0;
 end 
-// Din1[ 2 ]
+// Dst[ 2 ]
 initial
 begin
-	Din1[2] = 1'b0;
-	Din1[2] = #850000 1'b1;
-	Din1[2] = #40000 1'b0;
+	Dst[2] = 1'b0;
+	Dst[2] = #140000 1'b1;
+	Dst[2] = #70000 1'b0;
+	Dst[2] = #150000 1'b1;
+	Dst[2] = #120000 1'b0;
+	Dst[2] = #40000 1'b1;
+	Dst[2] = #90000 1'b0;
 end 
-// Din1[ 1 ]
+// Dst[ 1 ]
 initial
 begin
-	Din1[1] = 1'b0;
-	Din1[1] = #330000 1'b1;
-	Din1[1] = #100000 1'b0;
-	Din1[1] = #420000 1'b1;
-	Din1[1] = #40000 1'b0;
+	Dst[1] = 1'b0;
+	Dst[1] = #140000 1'b1;
+	Dst[1] = #70000 1'b0;
+	Dst[1] = #150000 1'b1;
+	Dst[1] = #120000 1'b0;
+	Dst[1] = #40000 1'b1;
+	Dst[1] = #90000 1'b0;
 end 
-// Din1[ 0 ]
+// Dst[ 0 ]
 initial
 begin
-	Din1[0] = 1'b0;
-	Din1[0] = #510000 1'b1;
-	Din1[0] = #110000 1'b0;
-	Din1[0] = #230000 1'b1;
-	Din1[0] = #40000 1'b0;
+	Dst[0] = 1'b0;
 end 
-// Din2[ 1 ]
+// Src[ 7 ]
 initial
 begin
-	Din2[1] = 1'b0;
-	Din2[1] = #60000 1'b1;
-	Din2[1] = #20000 1'b0;
-	Din2[1] = #90000 1'b1;
-	Din2[1] = #20000 1'b0;
-	Din2[1] = #80000 1'b1;
-	Din2[1] = #40000 1'b0;
-	Din2[1] = #140000 1'b1;
-	Din2[1] = #30000 1'b0;
-	Din2[1] = #50000 1'b1;
-	Din2[1] = #30000 1'b0;
-	Din2[1] = #180000 1'b1;
-	Din2[1] = #70000 1'b0;
-	Din2[1] = #40000 1'b1;
-	Din2[1] = #40000 1'b0;
+	Src[7] = 1'b0;
 end 
-// Din2[ 0 ]
+// Src[ 6 ]
 initial
 begin
-	Din2[0] = 1'b0;
-	Din2[0] = #40000 1'b1;
-	Din2[0] = #20000 1'b0;
-	Din2[0] = #110000 1'b1;
-	Din2[0] = #20000 1'b0;
-	Din2[0] = #380000 1'b1;
-	Din2[0] = #30000 1'b0;
-	Din2[0] = #60000 1'b1;
-	Din2[0] = #40000 1'b0;
-	Din2[0] = #40000 1'b1;
-	Din2[0] = #70000 1'b0;
-	Din2[0] = #40000 1'b1;
-	Din2[0] = #20000 1'b0;
+	Src[6] = 1'b0;
+	Src[6] = #50000 1'b1;
+	Src[6] = #90000 1'b0;
+	Src[6] = #200000 1'b1;
+	Src[6] = #110000 1'b0;
+end 
+// Src[ 5 ]
+initial
+begin
+	Src[5] = 1'b0;
+	Src[5] = #50000 1'b1;
+	Src[5] = #90000 1'b0;
+	Src[5] = #200000 1'b1;
+	Src[5] = #110000 1'b0;
+	Src[5] = #50000 1'b1;
+	Src[5] = #150000 1'b0;
+end 
+// Src[ 4 ]
+initial
+begin
+	Src[4] = 1'b0;
+	Src[4] = #50000 1'b1;
+	Src[4] = #90000 1'b0;
+	Src[4] = #50000 1'b1;
+	Src[4] = #100000 1'b0;
+	Src[4] = #50000 1'b1;
+	Src[4] = #110000 1'b0;
+	Src[4] = #50000 1'b1;
+	Src[4] = #150000 1'b0;
+end 
+// Src[ 3 ]
+initial
+begin
+	Src[3] = 1'b0;
+	Src[3] = #50000 1'b1;
+	Src[3] = #90000 1'b0;
+	Src[3] = #50000 1'b1;
+	Src[3] = #100000 1'b0;
+	Src[3] = #50000 1'b1;
+	Src[3] = #110000 1'b0;
+	Src[3] = #50000 1'b1;
+	Src[3] = #150000 1'b0;
+end 
+// Src[ 2 ]
+initial
+begin
+	Src[2] = 1'b0;
+	Src[2] = #50000 1'b1;
+	Src[2] = #90000 1'b0;
+	Src[2] = #50000 1'b1;
+	Src[2] = #100000 1'b0;
+	Src[2] = #210000 1'b1;
+	Src[2] = #150000 1'b0;
+end 
+// Src[ 1 ]
+initial
+begin
+	Src[1] = 1'b0;
+	Src[1] = #190000 1'b1;
+	Src[1] = #100000 1'b0;
+	Src[1] = #210000 1'b1;
+	Src[1] = #150000 1'b0;
+end 
+// Src[ 0 ]
+initial
+begin
+	Src[0] = 1'b0;
+end 
+
+// is_ADD
+initial
+begin
+	is_ADD = 1'b0;
+	is_ADD = #120000 1'b1;
+	is_ADD = #470000 1'b0;
+end 
+
+// rst
+initial
+begin
+	rst = 1'b1;
+end 
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #10000 1'b1;
+	#10000;
 end 
 endmodule
 

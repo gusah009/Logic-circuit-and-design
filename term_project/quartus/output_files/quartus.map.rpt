@@ -1,5 +1,5 @@
 Analysis & Synthesis report for quartus
-Sun Dec 19 22:50:01 2021
+Tue Dec 21 17:29:37 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,7 +14,8 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +42,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Dec 19 22:50:01 2021       ;
+; Analysis & Synthesis Status ; Successful - Tue Dec 21 17:29:37 2021       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; quartus                                     ;
-; Top-level Entity Name       ; shw_module                                  ;
+; Top-level Entity Name       ; sram_8bitx8                                 ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 19                                          ;
-; Total pins                  ; 26                                          ;
+; Total logic elements        ; 152                                         ;
+; Total pins                  ; 36                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -58,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                            ; shw_module         ; quartus            ;
+; Top-level entity name                                            ; sram_8bitx8        ; quartus            ;
 ; Family name                                                      ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -128,8 +129,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -139,62 +140,72 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
-; count_8.bdf                      ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/term_proj/term_project/quartus/count_8.bdf    ;         ;
-; mx_2x1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/term_proj/term_project/quartus/mx_2x1.bdf     ;         ;
-; shw_module.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/term_proj/term_project/quartus/shw_module.bdf ;         ;
-; b2seg.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/term_proj/term_project/quartus/b2seg.bdf      ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; sram_8bitx8.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/sram_8bitx8.bdf  ;         ;
+; mux_8bit_4x1.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/mux_8bit_4x1.bdf ;         ;
+; demux.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/demux.bdf        ;         ;
+; reg_8bit_ce.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/reg_8bit_ce.bdf  ;         ;
+; mux_8bit_2x1.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/mux_8bit_2x1.bdf ;         ;
+; mx_2x1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/Users/user/Logic-circuit-and-design/term_project/quartus/mx_2x1.bdf       ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Total logic elements                        ; 19                  ;
-;     -- Combinational with no register       ; 16                  ;
-;     -- Register only                        ; 0                   ;
-;     -- Combinational with a register        ; 3                   ;
-;                                             ;                     ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 4                   ;
-;     -- 3 input functions                    ; 11                  ;
-;     -- 2 input functions                    ; 3                   ;
-;     -- 1 input functions                    ; 1                   ;
-;     -- 0 input functions                    ; 0                   ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 19                  ;
-;     -- arithmetic mode                      ; 0                   ;
-;     -- qfbk mode                            ; 0                   ;
-;     -- register cascade mode                ; 0                   ;
-;     -- synchronous clear/load mode          ; 0                   ;
-;     -- asynchronous clear/load mode         ; 3                   ;
-;                                             ;                     ;
-; Total registers                             ; 3                   ;
-; I/O pins                                    ; 26                  ;
-; Maximum fan-out node                        ; count_8:inst3|inst1 ;
-; Maximum fan-out                             ; 14                  ;
-; Total fan-out                               ; 77                  ;
-; Average fan-out                             ; 1.71                ;
-+---------------------------------------------+---------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 152   ;
+;     -- Combinational with no register       ; 88    ;
+;     -- Register only                        ; 64    ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 72    ;
+;     -- 3 input functions                    ; 16    ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 152   ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 64    ;
+;                                             ;       ;
+; Total registers                             ; 64    ;
+; I/O pins                                    ; 36    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 64    ;
+; Total fan-out                               ; 608   ;
+; Average fan-out                             ; 3.23  ;
++---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name       ; Entity Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+-------------+--------------+
-; |shw_module                ; 19 (8)      ; 3            ; 0          ; 26   ; 0            ; 16 (8)       ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |shw_module               ; shw_module  ; work         ;
-;    |b2seg:inst44|          ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |shw_module|b2seg:inst44  ; b2seg       ; work         ;
-;    |count_8:inst3|         ; 3 (3)       ; 3            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |shw_module|count_8:inst3 ; count_8     ; work         ;
-;    |mx_2x1:inst21|         ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |shw_module|mx_2x1:inst21 ; mx_2x1      ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
+; |sram_8bitx8               ; 152 (0)     ; 64           ; 0          ; 36   ; 0            ; 88 (0)       ; 64 (0)            ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8                     ; sram_8bitx8  ; work         ;
+;    |demux:inst99|          ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|demux:inst99        ; demux        ; work         ;
+;    |mux_8bit_2x1:inst10|   ; 40 (40)     ; 0            ; 0          ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|mux_8bit_2x1:inst10 ; mux_8bit_2x1 ; work         ;
+;    |mux_8bit_2x1:inst13|   ; 40 (40)     ; 0            ; 0          ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|mux_8bit_2x1:inst13 ; mux_8bit_2x1 ; work         ;
+;    |reg_8bit_ce:inst1|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst1   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst2|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst2   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst3|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst3   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst4|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst4   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst5|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst5   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst6|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst6   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst7|     ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst7   ; reg_8bit_ce  ; work         ;
+;    |reg_8bit_ce:inst|      ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |sram_8bitx8|reg_8bit_ce:inst    ; reg_8bit_ce  ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -203,14 +214,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 64    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 64    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 64    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |sram_8bitx8|mux_8bit_2x1:inst10|inst10 ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |sram_8bitx8|mux_8bit_2x1:inst13|inst10 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +-------------------------------+
@@ -219,10 +240,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Dec 19 22:49:53 2021
+    Info: Processing started: Tue Dec 21 17:29:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off quartus -c quartus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file tpj.bdf
+    Info (12023): Found entity 1: tpj
+Info (12021): Found 1 design units, including 1 entities, in source file sram_8bitx8.bdf
+    Info (12023): Found entity 1: sram_8bitx8
+Info (12021): Found 1 design units, including 1 entities, in source file reg_8bit_ce_sharp.bdf
+    Info (12023): Found entity 1: reg_8bit_ce_sharp
+Info (12021): Found 1 design units, including 1 entities, in source file ram_to_cpu.bdf
+    Info (12023): Found entity 1: RAM_to_CPU
+Info (12021): Found 1 design units, including 1 entities, in source file mux_8bit_4x1.bdf
+    Info (12023): Found entity 1: mux_8bit_4x1
+Info (12021): Found 1 design units, including 1 entities, in source file demux.bdf
+    Info (12023): Found entity 1: demux
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_memory.bdf
+    Info (12023): Found entity 1: cpu_memory
+Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
+    Info (12023): Found entity 1: Block1
+Info (12021): Found 1 design units, including 1 entities, in source file ascii_to_address.bdf
+    Info (12023): Found entity 1: ascii_to_address
+Info (12021): Found 1 design units, including 1 entities, in source file ascii_comparator.bdf
+    Info (12023): Found entity 1: ascii_comparator
+Warning (12019): Can't analyze file -- file PROJECT_inst.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file count_8.bdf
     Info (12023): Found entity 1: count_8
 Info (12021): Found 1 design units, including 1 entities, in source file count_4.bdf
@@ -289,22 +331,47 @@ Info (12021): Found 1 design units, including 1 entities, in source file b2seg.b
     Info (12023): Found entity 1: b2seg
 Info (12021): Found 1 design units, including 1 entities, in source file is_ascii.bdf
     Info (12023): Found entity 1: is_ascii
-Info (12127): Elaborating entity "shw_module" for the top level hierarchy
-Warning (275011): Block or symbol "NOT" of instance "inst5" overlaps another block or symbol
-Warning (275011): Block or symbol "NOT" of instance "inst16" overlaps another block or symbol
-Warning (275011): Block or symbol "NOT" of instance "inst18" overlaps another block or symbol
-Warning (275011): Block or symbol "NOT" of instance "inst24" overlaps another block or symbol
-Info (12128): Elaborating entity "b2seg" for hierarchy "b2seg:inst44"
-Info (12128): Elaborating entity "mx_2x1" for hierarchy "b2seg:inst44|mx_2x1:inst"
-Info (12128): Elaborating entity "count_8" for hierarchy "count_8:inst3"
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 19 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4698 megabytes
-    Info: Processing ended: Sun Dec 19 22:50:01 2021
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+Info (12021): Found 1 design units, including 1 entities, in source file mov_module.bdf
+    Info (12023): Found entity 1: mov_module
+Info (12021): Found 1 design units, including 1 entities, in source file add_module.bdf
+    Info (12023): Found entity 1: add_module
+Info (12021): Found 1 design units, including 1 entities, in source file adder_subtractor_8bit.bdf
+    Info (12023): Found entity 1: adder_subtractor_8bit
+Info (12021): Found 1 design units, including 1 entities, in source file and_8bit_2bit.bdf
+    Info (12023): Found entity 1: and_8bit_2bit
+Info (12021): Found 1 design units, including 1 entities, in source file sub_module.bdf
+    Info (12023): Found entity 1: sub_module
+Info (12127): Elaborating entity "sram_8bitx8" for the top level hierarchy
+Warning (275083): Bus "CE_out2[2..0]" found using same base name as "CE_out", which might lead to a name conflict.
+Warning (275083): Bus "Out2[7..0]" found using same base name as "Out", which might lead to a name conflict.
+Warning (275083): Bus "CE_out2[2..0]" found using same base name as "CE_out", which might lead to a name conflict.
+Warning (275083): Bus "CE_out2[1..0]" found using same base name as "CE_out", which might lead to a name conflict.
+Warning (275083): Bus "CE_out2[2]" found using same base name as "CE_out", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "CE_out" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "CE_out[2..0]" to "CE_out2..0"
+Warning (275080): Converted elements in bus name "CE_out2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "CE_out2[2..0]" to "CE_out22..0"
+Warning (275080): Converted elements in bus name "Out" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "Out[7..0]" to "Out7..0"
+Warning (275080): Converted elements in bus name "Out2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "Out2[7..0]" to "Out27..0"
+Info (12128): Elaborating entity "mux_8bit_2x1" for hierarchy "mux_8bit_2x1:inst10"
+Warning (275011): Block or symbol "AND2" of instance "inst2" overlaps another block or symbol
+Warning (275011): Block or symbol "OR2" of instance "inst10" overlaps another block or symbol
+Warning (275011): Block or symbol "OR2" of instance "inst20" overlaps another block or symbol
+Warning (275011): Block or symbol "OR2" of instance "inst23" overlaps another block or symbol
+Info (12128): Elaborating entity "mux_8bit_4x1" for hierarchy "mux_8bit_4x1:inst8"
+Info (12128): Elaborating entity "reg_8bit_ce" for hierarchy "reg_8bit_ce:inst"
+Info (12128): Elaborating entity "mx_2x1" for hierarchy "reg_8bit_ce:inst|mx_2x1:inst10"
+Info (12128): Elaborating entity "demux" for hierarchy "demux:inst99"
+Info (21057): Implemented 188 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 152 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4722 megabytes
+    Info: Processing ended: Tue Dec 21 17:29:37 2021
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
 
 
