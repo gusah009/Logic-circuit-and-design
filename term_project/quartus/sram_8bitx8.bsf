@@ -21,7 +21,7 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 208 176)
+	(rect 16 16 216 176)
 	(text "sram_8bitx8" (rect 5 0 80 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 139 24 156)(font "Intel Clear" ))
 	(port
@@ -62,32 +62,32 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 112)
 		(input)
-		(text "CE_out[2..0]" (rect 0 0 71 19)(font "Intel Clear" (font_size 8)))
-		(text "CE_out[2..0]" (rect 21 107 92 126)(font "Intel Clear" (font_size 8)))
+		(text "DCE_out[2..0]" (rect 0 0 81 19)(font "Intel Clear" (font_size 8)))
+		(text "DCE_out[2..0]" (rect 21 107 102 126)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
 		(pt 0 128)
 		(input)
-		(text "CE_out2[2..0]" (rect 0 0 80 19)(font "Intel Clear" (font_size 8)))
-		(text "CE_out2[2..0]" (rect 21 123 101 142)(font "Intel Clear" (font_size 8)))
+		(text "CE2_out[2..0]" (rect 0 0 80 19)(font "Intel Clear" (font_size 8)))
+		(text "CE2_out[2..0]" (rect 21 123 101 142)(font "Intel Clear" (font_size 8)))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
-		(pt 192 32)
+		(pt 200 32)
 		(output)
 		(text "Out[7..0]" (rect 0 0 51 19)(font "Intel Clear" (font_size 8)))
-		(text "Out[7..0]" (rect 120 27 171 46)(font "Intel Clear" (font_size 8)))
-		(line (pt 192 32)(pt 176 32)(line_width 3))
+		(text "Out[7..0]" (rect 128 27 179 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
-		(pt 192 48)
+		(pt 200 48)
 		(output)
-		(text "Out2[7..0]" (rect 0 0 60 19)(font "Intel Clear" (font_size 8)))
-		(text "Out2[7..0]" (rect 111 43 171 62)(font "Intel Clear" (font_size 8)))
-		(line (pt 192 48)(pt 176 48)(line_width 3))
+		(text "Dout2[7..0]" (rect 0 0 67 19)(font "Intel Clear" (font_size 8)))
+		(text "Dout2[7..0]" (rect 112 43 179 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 176 144))
+		(rectangle (rect 16 16 184 144))
 	)
 )

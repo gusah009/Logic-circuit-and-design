@@ -19,178 +19,224 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/19/2021 17:01:21"
+// Generated on "12/22/2021 12:29:12"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          RAM_5
+// Verilog Test Bench (with test vectors) for design :                          PROJECT
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module RAM_5_vlg_vec_tst();
+module PROJECT_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg [2:0] CE_in;
-reg [2:0] CE_out;
 reg clk;
-reg [7:0] Din;
-reg reg_ce;
+reg dip_switch;
+reg eight;
+reg five;
+reg four;
+reg LCD_rst;
+reg nine;
+reg one;
 reg rst;
+reg seven;
+reg sharp;
+reg six;
+reg star;
+reg three;
+reg two;
+reg zero;
 // wires                                               
-wire [7:0] RAM_OUT;
-wire [7:0] reg_out1;
-wire [7:0] reg_out2;
-wire [7:0] reg_out3;
-wire [7:0] reg_out4;
-wire [7:0] reg_out5;
+wire a;
+wire b;
+wire c;
+wire com1;
+wire com2;
+wire com3;
+wire com4;
+wire com5;
+wire com6;
+wire com7;
+wire com8;
+wire d;
+wire e;
+wire f;
+wire g;
+wire [7:0] LCD_DATA;
+wire LCD_E;
+wire LCD_RS;
+wire LCD_RW;
 
 // assign statements (if any)                          
-RAM_5 i1 (
+PROJECT i1 (
 // port map - connection between master ports and signals/registers   
-	.CE_in(CE_in),
-	.CE_out(CE_out),
+	.a(a),
+	.b(b),
+	.c(c),
 	.clk(clk),
-	.Din(Din),
-	.RAM_OUT(RAM_OUT),
-	.reg_ce(reg_ce),
-	.reg_out1(reg_out1),
-	.reg_out2(reg_out2),
-	.reg_out3(reg_out3),
-	.reg_out4(reg_out4),
-	.reg_out5(reg_out5),
-	.rst(rst)
+	.com1(com1),
+	.com2(com2),
+	.com3(com3),
+	.com4(com4),
+	.com5(com5),
+	.com6(com6),
+	.com7(com7),
+	.com8(com8),
+	.d(d),
+	.dip_switch(dip_switch),
+	.e(e),
+	.eight(eight),
+	.f(f),
+	.five(five),
+	.four(four),
+	.g(g),
+	.LCD_DATA(LCD_DATA),
+	.LCD_E(LCD_E),
+	.LCD_RS(LCD_RS),
+	.LCD_rst(LCD_rst),
+	.LCD_RW(LCD_RW),
+	.nine(nine),
+	.one(one),
+	.rst(rst),
+	.seven(seven),
+	.sharp(sharp),
+	.six(six),
+	.star(star),
+	.three(three),
+	.two(two),
+	.zero(zero)
 );
 initial 
 begin 
-#1000000 $finish;
-end 
-// CE_in[ 2 ]
-initial
-begin
-	CE_in[2] = 1'b0;
-	CE_in[2] = #20000 1'b1;
-	CE_in[2] = #40000 1'b0;
-end 
-// CE_in[ 1 ]
-initial
-begin
-	CE_in[1] = 1'b0;
-	CE_in[1] = #60000 1'b1;
-	CE_in[1] = #40000 1'b0;
-	CE_in[1] = #40000 1'b1;
-	CE_in[1] = #40000 1'b0;
-end 
-// CE_in[ 0 ]
-initial
-begin
-	CE_in[0] = 1'b0;
-	CE_in[0] = #100000 1'b1;
-	CE_in[0] = #80000 1'b0;
-end 
-// CE_out[ 2 ]
-initial
-begin
-	CE_out[2] = 1'b0;
-	CE_out[2] = #220000 1'b1;
-	CE_out[2] = #40000 1'b0;
-end 
-// CE_out[ 1 ]
-initial
-begin
-	CE_out[1] = 1'b0;
-	CE_out[1] = #260000 1'b1;
-	CE_out[1] = #80000 1'b0;
-end 
-// CE_out[ 0 ]
-initial
-begin
-	CE_out[0] = 1'b0;
-	CE_out[0] = #260000 1'b1;
-	CE_out[0] = #40000 1'b0;
-	CE_out[0] = #40000 1'b1;
-	CE_out[0] = #40000 1'b0;
+#20000000 $finish;
 end 
 
 // clk
-initial
+always
 begin
-	clk = 1'b1;
-	# 20000;
-	repeat(24)
-	begin
-		clk = 1'b0;
-		clk = #20000 1'b1;
-		# 20000;
-	end
 	clk = 1'b0;
-end 
-// Din[ 7 ]
-initial
-begin
-	Din[7] = 1'b0;
-	Din[7] = #20000 1'b1;
-	Din[7] = #40000 1'b0;
-end 
-// Din[ 6 ]
-initial
-begin
-	Din[6] = 1'b0;
-	Din[6] = #20000 1'b1;
-	Din[6] = #40000 1'b0;
-	Din[6] = #80000 1'b1;
-	Din[6] = #40000 1'b0;
-end 
-// Din[ 5 ]
-initial
-begin
-	Din[5] = 1'b0;
-	Din[5] = #60000 1'b1;
-	Din[5] = #40000 1'b0;
-	Din[5] = #40000 1'b1;
-	Din[5] = #40000 1'b0;
-end 
-// Din[ 4 ]
-initial
-begin
-	Din[4] = 1'b0;
-	Din[4] = #60000 1'b1;
-	Din[4] = #80000 1'b0;
-end 
-// Din[ 3 ]
-initial
-begin
-	Din[3] = 1'b0;
-	Din[3] = #100000 1'b1;
-	Din[3] = #40000 1'b0;
-end 
-// Din[ 2 ]
-initial
-begin
-	Din[2] = 1'b0;
-end 
-// Din[ 1 ]
-initial
-begin
-	Din[1] = 1'b0;
-end 
-// Din[ 0 ]
-initial
-begin
-	Din[0] = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
 end 
 
-// reg_ce
+// LCD_rst
 initial
 begin
-	reg_ce = 1'b0;
-	reg_ce = #20000 1'b1;
-	reg_ce = #160000 1'b0;
+	LCD_rst = 1'b0;
+end 
+
+// dip_switch
+initial
+begin
+	dip_switch = 1'b0;
+	dip_switch = #1050000 1'b1;
+	dip_switch = #200000 1'b0;
+end 
+
+// nine
+initial
+begin
+	nine = 1'b0;
+end 
+
+// eight
+initial
+begin
+	eight = 1'b0;
+end 
+
+// seven
+initial
+begin
+	seven = 1'b0;
+end 
+
+// six
+initial
+begin
+	six = 1'b0;
+	six = #1070000 1'b1;
+	six = #160000 1'b0;
+end 
+
+// five
+initial
+begin
+	five = 1'b0;
+end 
+
+// four
+initial
+begin
+	four = 1'b0;
+end 
+
+// three
+initial
+begin
+	three = 1'b0;
+end 
+
+// two
+initial
+begin
+	two = 1'b0;
+end 
+
+// one
+initial
+begin
+	one = 1'b0;
+	one = #20000 1'b1;
+	one = #70000 1'b0;
+	one = #150000 1'b1;
+	one = #80000 1'b0;
+	one = #40000 1'b1;
+	one = #80000 1'b0;
+	one = #40000 1'b1;
+	one = #70000 1'b0;
+	one = #40000 1'b1;
+	one = #90000 1'b0;
+	one = #140000 1'b1;
+	one = #80000 1'b0;
+	one = #540000 1'b1;
+	one = #90000 1'b0;
+end 
+
+// zero
+initial
+begin
+	zero = 1'b0;
+	zero = #130000 1'b1;
+	zero = #70000 1'b0;
+	zero = #510000 1'b1;
+	zero = #90000 1'b0;
+	zero = #120000 1'b1;
+	zero = #90000 1'b0;
+	zero = #280000 1'b1;
+	zero = #110000 1'b0;
+	zero = #150000 1'b1;
+	zero = #130000 1'b0;
+end 
+
+// star
+initial
+begin
+	star = 1'b0;
+	star = #1710000 1'b1;
+	star = #260000 1'b0;
+end 
+
+// sharp
+initial
+begin
+	sharp = 1'b0;
 end 
 
 // rst
 initial
 begin
-	rst = 1'b1;
+	rst = 1'b0;
 end 
 endmodule
 

@@ -1,0 +1,607 @@
+Timing Analyzer report for quartus
+Wed Dec 22 17:11:45 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; quartus                                             ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M570ZT144C4                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 31.34 MHz ; 31.34 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -30.904 ; -2028.228     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.719 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                 ;
++---------+------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                      ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -30.904 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.644     ;
+; -30.904 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.644     ;
+; -30.748 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.488     ;
+; -30.748 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.488     ;
+; -30.502 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.242     ;
+; -30.502 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 31.242     ;
+; -30.185 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.925     ;
+; -30.185 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.925     ;
+; -30.141 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.881     ;
+; -30.141 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.881     ;
+; -30.037 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.777     ;
+; -30.037 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.777     ;
+; -30.029 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.769     ;
+; -30.029 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.769     ;
+; -29.960 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst11 ; clk          ; clk         ; 1.000        ; 0.000      ; 30.700     ;
+; -29.905 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.645     ;
+; -29.905 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.645     ;
+; -29.886 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.626     ;
+; -29.808 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.548     ;
+; -29.808 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.548     ;
+; -29.804 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst11 ; clk          ; clk         ; 1.000        ; 0.000      ; 30.544     ;
+; -29.795 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.535     ;
+; -29.783 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.523     ;
+; -29.783 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.523     ;
+; -29.767 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.507     ;
+; -29.767 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.507     ;
+; -29.754 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.494     ;
+; -29.754 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.494     ;
+; -29.743 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst3   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.483     ;
+; -29.730 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.470     ;
+; -29.713 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.453     ;
+; -29.713 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.453     ;
+; -29.712 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.452     ;
+; -29.689 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.429     ;
+; -29.689 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.429     ;
+; -29.639 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.379     ;
+; -29.636 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst2   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.376     ;
+; -29.611 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.351     ;
+; -29.611 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.351     ;
+; -29.602 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.342     ;
+; -29.602 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.342     ;
+; -29.598 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.338     ;
+; -29.598 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.338     ;
+; -29.587 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst3   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.327     ;
+; -29.558 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst11 ; clk          ; clk         ; 1.000        ; 0.000      ; 30.298     ;
+; -29.556 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.296     ;
+; -29.548 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.288     ;
+; -29.548 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.288     ;
+; -29.533 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.273     ;
+; -29.533 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.273     ;
+; -29.501 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.241     ;
+; -29.501 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.241     ;
+; -29.484 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.224     ;
+; -29.480 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst2   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.220     ;
+; -29.446 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.186     ;
+; -29.446 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.186     ;
+; -29.425 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst2     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.165     ;
+; -29.425 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst2     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.165     ;
+; -29.422 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.162     ;
+; -29.422 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.162     ;
+; -29.393 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.133     ;
+; -29.365 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.105     ;
+; -29.365 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.105     ;
+; -29.352 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.092     ;
+; -29.352 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.092     ;
+; -29.341 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst3   ; clk          ; clk         ; 1.000        ; 0.000      ; 30.081     ;
+; -29.318 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.058     ;
+; -29.318 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.058     ;
+; -29.310 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.050     ;
+; -29.287 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.027     ;
+; -29.287 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 30.027     ;
+; -29.243 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.983     ;
+; -29.234 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst2   ; clk          ; clk         ; 1.000        ; 0.000      ; 29.974     ;
+; -29.220 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst2     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.960     ;
+; -29.220 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst2     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.960     ;
+; -29.200 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.940     ;
+; -29.200 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.940     ;
+; -29.197 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst11 ; clk          ; clk         ; 1.000        ; 0.000      ; 29.937     ;
+; -29.186 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.926     ;
+; -29.186 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst3|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.926     ;
+; -29.123 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.863     ;
+; -29.108 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 29.848     ;
+; -29.093 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst11 ; clk          ; clk         ; 1.000        ; 0.000      ; 29.833     ;
+; -29.089 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.829     ;
+; -29.089 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst      ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.829     ;
+; -29.087 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1 ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.827     ;
+; -29.083 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.823     ;
+; -29.083 ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.823     ;
+; -29.070 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.810     ;
+; -29.070 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.810     ;
+; -29.069 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst3     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.809     ;
+; -29.069 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst3     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst2  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.809     ;
+; -29.032 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.772     ;
+; -29.019 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst  ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.759     ;
+; -29.004 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst4  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.744     ;
+; -29.004 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 29.744     ;
+; -28.994 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.734     ;
+; -28.994 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.734     ;
+; -28.991 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst1  ; clk          ; clk         ; 1.000        ; 0.000      ; 29.731     ;
+; -28.991 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1     ; sram_8bitx8:inst10|reg_8bit_ce:inst3|inst   ; clk          ; clk         ; 1.000        ; 0.000      ; 29.731     ;
++---------+------------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                               ;
++-------+--------------------------------------------------+--------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.719 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst9  ; trigger_8bit:inst16|inst2[6]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.793      ;
+; 1.741 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst2  ; trigger_8bit:inst16|inst2[2]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.755 ; trigger_8bit:inst16|inst2[6]                     ; trigger_8bit:inst16|inst3[6]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.829      ;
+; 1.767 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst3  ; trigger_8bit:inst16|inst2[3]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.841      ;
+; 1.768 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst4  ; trigger_8bit:inst16|inst2[4]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.842      ;
+; 1.799 ; trigger_8bit:inst16|inst2[4]                     ; trigger_8bit:inst16|inst3[4]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.873      ;
+; 1.828 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst5       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.902      ;
+; 1.828 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.902      ;
+; 1.990 ; shw_module:inst14|count_8:inst3|inst             ; shw_module:inst14|count_8:inst3|inst                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.064      ;
+; 2.011 ; shw_module:inst14|count_8:inst3|inst1            ; shw_module:inst14|count_8:inst3|inst1                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.085      ;
+; 2.023 ; trigger_8bit:inst16|inst2[2]                     ; trigger_8bit:inst16|inst3[2]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.097      ;
+; 2.033 ; trigger_8bit:inst16|inst2[7]                     ; trigger_8bit:inst16|inst3[7]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.107      ;
+; 2.133 ; trigger_8bit:inst16|inst2[3]                     ; trigger_8bit:inst16|inst3[3]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 2.133 ; trigger_8bit:inst16|inst2[0]                     ; trigger_8bit:inst16|inst3[0]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 2.286 ; shw_module:inst14|count_8:inst3|inst2            ; shw_module:inst14|count_8:inst3|inst                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.287 ; shw_module:inst14|count_8:inst3|inst2            ; shw_module:inst14|count_8:inst3|inst1                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.361      ;
+; 2.475 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst2        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst2  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.549      ;
+; 2.503 ; shw_module:inst14|count_8:inst3|inst2            ; shw_module:inst14|count_8:inst3|inst2                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.577      ;
+; 2.829 ; shw_module:inst14|count_8:inst3|inst1            ; shw_module:inst14|count_8:inst3|inst                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.903      ;
+; 2.897 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst9       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst2 ; clk          ; clk         ; 0.000        ; 0.000      ; 2.971      ;
+; 3.024 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst1  ; trigger_8bit:inst16|inst2[1]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.098      ;
+; 3.036 ; trigger_8bit:inst16|inst2[1]                     ; trigger_8bit:inst16|inst3[1]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.110      ;
+; 3.130 ; trigger_8bit:inst16|inst2[5]                     ; trigger_8bit:inst16|inst3[5]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.204      ;
+; 3.159 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst3       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst3  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.233      ;
+; 3.251 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst   ; trigger_8bit:inst16|inst2[0]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 3.325      ;
+; 3.853 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst1        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.927      ;
+; 3.886 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst         ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 3.960      ;
+; 3.951 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst2       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst2  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.025      ;
+; 4.163 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst1       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.237      ;
+; 4.265 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 4.339      ;
+; 4.438 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 4.512      ;
+; 4.515 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 4.589      ;
+; 4.770 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst11       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst3 ; clk          ; clk         ; 0.000        ; 0.000      ; 4.844      ;
+; 4.799 ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst3       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst3  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.873      ;
+; 5.108 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst5       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.182      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst11                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst1                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst9                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst5                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.254 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst4                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.328      ;
+; 5.262 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.336      ;
+; 5.263 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.337      ;
+; 5.264 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst3       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst3  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.338      ;
+; 5.338 ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst4        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.412      ;
+; 5.351 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst5       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.425      ;
+; 5.426 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst44|inst11 ; trigger_8bit:inst16|inst2[7]                                             ; clk          ; clk         ; 0.000        ; 0.000      ; 5.500      ;
+; 5.467 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst1       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.541      ;
+; 5.483 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst9       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst2 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.557      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst11                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst1                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst                                 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst9                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst5                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.536 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst|inst4                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.610      ;
+; 5.613 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst4       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.687      ;
+; 5.644 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.718      ;
+; 5.644 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst4                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.718      ;
+; 5.644 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.718      ;
+; 5.666 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 5.740      ;
+; 5.671 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 5.745      ;
+; 5.672 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 5.746      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst3                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst2                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst                                ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.861 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst11                              ; clk          ; clk         ; 0.000        ; 0.000      ; 5.935      ;
+; 5.943 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst9       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst2 ; clk          ; clk         ; 0.000        ; 0.000      ; 6.017      ;
+; 5.988 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst2   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 6.062      ;
+; 5.993 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst2   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst1 ; clk          ; clk         ; 0.000        ; 0.000      ; 6.067      ;
+; 5.994 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst2   ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 6.068      ;
+; 5.998 ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst2       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst2  ; clk          ; clk         ; 0.000        ; 0.000      ; 6.072      ;
+; 6.045 ; sram_8bitx8:inst10|reg_8bit_ce:inst2|inst2       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst2  ; clk          ; clk         ; 0.000        ; 0.000      ; 6.119      ;
+; 6.084 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst  ; clk          ; clk         ; 0.000        ; 0.000      ; 6.158      ;
+; 6.100 ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst1  ; clk          ; clk         ; 0.000        ; 0.000      ; 6.174      ;
+; 6.197 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst9                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.271      ;
+; 6.197 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.271      ;
+; 6.197 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst1                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.271      ;
+; 6.197 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst11                              ; clk          ; clk         ; 0.000        ; 0.000      ; 6.271      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst11                              ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst9                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst1                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst3                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst2                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst1                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst                                ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.209 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst1   ; sram_8bitx8:inst10|reg_8bit_ce:inst5|inst11                              ; clk          ; clk         ; 0.000        ; 0.000      ; 6.283      ;
+; 6.328 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 6.402      ;
+; 6.370 ; sram_8bitx8:inst10|reg_8bit_ce:inst7|inst        ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst|inst   ; clk          ; clk         ; 0.000        ; 0.000      ; 6.444      ;
+; 6.383 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.457      ;
+; 6.383 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst4                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.457      ;
+; 6.383 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst4|inst                                ; clk          ; clk         ; 0.000        ; 0.000      ; 6.457      ;
+; 6.403 ; sram_8bitx8:inst10|reg_8bit_ce:inst6|inst9       ; shw_module:inst14|eight_bit_register:inst1|four_bit_register:inst1|inst2 ; clk          ; clk         ; 0.000        ; 0.000      ; 6.477      ;
+; 6.423 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst9                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.497      ;
+; 6.423 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst5                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.497      ;
+; 6.423 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst4                               ; clk          ; clk         ; 0.000        ; 0.000      ; 6.497      ;
+; 6.423 ; RAM_to_CPU:inst1|reg_8bit_ce_sharp:inst4|inst    ; sram_8bitx8:inst10|reg_8bit_ce:inst1|inst11                              ; clk          ; clk         ; 0.000        ; 0.000      ; 6.497      ;
++-------+--------------------------------------------------+--------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 255724   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 255724   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 27    ; 27   ;
+; Unconstrained Input Port Paths  ; 193   ; 193  ;
+; Unconstrained Output Ports      ; 30    ; 30   ;
+; Unconstrained Output Port Paths ; 170   ; 170  ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; RAM2[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sharp      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; star       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Segment[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; a           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; b           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; c           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com4        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com5        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com6        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com7        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com8        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; RAM2[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM2[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM4[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[0]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[1]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[2]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[3]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[4]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[5]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[6]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; RAM5[7]    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; rst        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sharp      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; star       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; Segment[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Segment[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; a           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; b           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; c           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com1        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com2        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com3        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com4        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com5        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com6        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com7        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; com8        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; d           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dst[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; e           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Wed Dec 22 17:11:44 2021
+Info: Command: quartus_sta quartus -c quartus
+Info: qsta_default_script.tcl version: #1
+Info (293031): Detected changes in Quartus Prime Settings File (.qsf).
+    Info (293028): Assignment EDA_SIMULATION_TOOL changed value from ModelSim-Altera (Verilog) to <None>.
+    Info (293030): Assignment EDA_NETLIST_WRITER_OUTPUT_DIR with value C:/Users/user/Logic-circuit-and-design/term_project/quartus/simulation/qsim/ has been deleted.
+    Info (293030): Assignment EDA_TIME_SCALE with value 1 ps has been deleted.
+    Info (293030): Assignment EDA_OUTPUT_DATA_FORMAT with value Verilog HDL has been deleted.
+    Info (293030): Assignment EDA_GENERATE_FUNCTIONAL_NETLIST with value off has been deleted.
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'quartus.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -30.904
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -30.904           -2028.228 clk 
+Info (332146): Worst-case hold slack is 1.719
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.719               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4692 megabytes
+    Info: Processing ended: Wed Dec 22 17:11:45 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

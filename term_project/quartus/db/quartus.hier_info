@@ -1,10 +1,17 @@
 |sram_8bitx8
-Out7 <= mux_8bit_2x1:inst10.Out[7]
-CE_out2 => mux_8bit_2x1:inst10.CE
-CE_out1 => mux_8bit_4x1:inst8.CE[1]
-CE_out1 => mux_8bit_4x1:inst9.CE[1]
-CE_out0 => mux_8bit_4x1:inst8.CE[0]
-CE_out0 => mux_8bit_4x1:inst9.CE[0]
+Dout2[0] <= mux_8bit_2x1:inst13.Out[0]
+Dout2[1] <= mux_8bit_2x1:inst13.Out[1]
+Dout2[2] <= mux_8bit_2x1:inst13.Out[2]
+Dout2[3] <= mux_8bit_2x1:inst13.Out[3]
+Dout2[4] <= mux_8bit_2x1:inst13.Out[4]
+Dout2[5] <= mux_8bit_2x1:inst13.Out[5]
+Dout2[6] <= mux_8bit_2x1:inst13.Out[6]
+Dout2[7] <= mux_8bit_2x1:inst13.Out[7]
+CE2_out[0] => mux_8bit_4x1:inst11.CE[0]
+CE2_out[0] => mux_8bit_4x1:inst12.CE[0]
+CE2_out[1] => mux_8bit_4x1:inst11.CE[1]
+CE2_out[1] => mux_8bit_4x1:inst12.CE[1]
+CE2_out[2] => mux_8bit_2x1:inst13.CE
 reg_ce => demux:inst99.reg_ce
 CE_in[0] => demux:inst99.CE_in[0]
 CE_in[1] => demux:inst99.CE_in[1]
@@ -33,29 +40,22 @@ rst_n => reg_8bit_ce:inst4.rst_n
 rst_n => reg_8bit_ce:inst5.rst_n
 rst_n => reg_8bit_ce:inst6.rst_n
 rst_n => reg_8bit_ce:inst7.rst_n
-Out6 <= mux_8bit_2x1:inst10.Out[6]
-Out5 <= mux_8bit_2x1:inst10.Out[5]
-Out4 <= mux_8bit_2x1:inst10.Out[4]
-Out3 <= mux_8bit_2x1:inst10.Out[3]
-Out2 <= mux_8bit_2x1:inst10.Out[2]
-Out1 <= mux_8bit_2x1:inst10.Out[1]
-Out0 <= mux_8bit_2x1:inst10.Out[0]
-Out27 <= mux_8bit_2x1:inst13.Out[7]
-CE_out22 => mux_8bit_2x1:inst13.CE
-CE_out21 => mux_8bit_4x1:inst11.CE[1]
-CE_out21 => mux_8bit_4x1:inst12.CE[1]
-CE_out20 => mux_8bit_4x1:inst11.CE[0]
-CE_out20 => mux_8bit_4x1:inst12.CE[0]
-Out26 <= mux_8bit_2x1:inst13.Out[6]
-Out25 <= mux_8bit_2x1:inst13.Out[5]
-Out24 <= mux_8bit_2x1:inst13.Out[4]
-Out23 <= mux_8bit_2x1:inst13.Out[3]
-Out22 <= mux_8bit_2x1:inst13.Out[2]
-Out21 <= mux_8bit_2x1:inst13.Out[1]
-Out20 <= mux_8bit_2x1:inst13.Out[0]
+Out[0] <= mux_8bit_2x1:inst10.Out[0]
+Out[1] <= mux_8bit_2x1:inst10.Out[1]
+Out[2] <= mux_8bit_2x1:inst10.Out[2]
+Out[3] <= mux_8bit_2x1:inst10.Out[3]
+Out[4] <= mux_8bit_2x1:inst10.Out[4]
+Out[5] <= mux_8bit_2x1:inst10.Out[5]
+Out[6] <= mux_8bit_2x1:inst10.Out[6]
+Out[7] <= mux_8bit_2x1:inst10.Out[7]
+DCE_out[0] => mux_8bit_4x1:inst8.CE[0]
+DCE_out[0] => mux_8bit_4x1:inst9.CE[0]
+DCE_out[1] => mux_8bit_4x1:inst8.CE[1]
+DCE_out[1] => mux_8bit_4x1:inst9.CE[1]
+DCE_out[2] => mux_8bit_2x1:inst10.CE
 
 
-|sram_8bitx8|mux_8bit_2x1:inst10
+|sram_8bitx8|mux_8bit_2x1:inst13
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -91,7 +91,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst8
+|sram_8bitx8|mux_8bit_4x1:inst11
 Out[0] <= mux_8bit_2x1:inst2.Out[0]
 Out[1] <= mux_8bit_2x1:inst2.Out[1]
 Out[2] <= mux_8bit_2x1:inst2.Out[2]
@@ -137,7 +137,7 @@ S3[6] => mux_8bit_2x1:inst1.s1[6]
 S3[7] => mux_8bit_2x1:inst1.s1[7]
 
 
-|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst2
+|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst2
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -173,7 +173,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst
+|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -209,7 +209,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst1
+|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst1
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -844,7 +844,7 @@ sel => inst.IN1
 s_1 => inst.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst9
+|sram_8bitx8|mux_8bit_4x1:inst12
 Out[0] <= mux_8bit_2x1:inst2.Out[0]
 Out[1] <= mux_8bit_2x1:inst2.Out[1]
 Out[2] <= mux_8bit_2x1:inst2.Out[2]
@@ -890,7 +890,7 @@ S3[6] => mux_8bit_2x1:inst1.s1[6]
 S3[7] => mux_8bit_2x1:inst1.s1[7]
 
 
-|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst2
+|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst2
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -926,7 +926,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst
+|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -962,7 +962,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst1
+|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst1
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1426,7 +1426,7 @@ sel => inst.IN1
 s_1 => inst.IN0
 
 
-|sram_8bitx8|mux_8bit_2x1:inst13
+|sram_8bitx8|mux_8bit_2x1:inst10
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1462,7 +1462,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst11
+|sram_8bitx8|mux_8bit_4x1:inst8
 Out[0] <= mux_8bit_2x1:inst2.Out[0]
 Out[1] <= mux_8bit_2x1:inst2.Out[1]
 Out[2] <= mux_8bit_2x1:inst2.Out[2]
@@ -1508,7 +1508,7 @@ S3[6] => mux_8bit_2x1:inst1.s1[6]
 S3[7] => mux_8bit_2x1:inst1.s1[7]
 
 
-|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst2
+|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst2
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1544,7 +1544,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst
+|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1580,7 +1580,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst11|mux_8bit_2x1:inst1
+|sram_8bitx8|mux_8bit_4x1:inst8|mux_8bit_2x1:inst1
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1616,7 +1616,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst12
+|sram_8bitx8|mux_8bit_4x1:inst9
 Out[0] <= mux_8bit_2x1:inst2.Out[0]
 Out[1] <= mux_8bit_2x1:inst2.Out[1]
 Out[2] <= mux_8bit_2x1:inst2.Out[2]
@@ -1662,7 +1662,7 @@ S3[6] => mux_8bit_2x1:inst1.s1[6]
 S3[7] => mux_8bit_2x1:inst1.s1[7]
 
 
-|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst2
+|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst2
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1698,7 +1698,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst
+|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE
@@ -1734,7 +1734,7 @@ s0[6] => inst3.IN0
 s0[7] => inst2.IN0
 
 
-|sram_8bitx8|mux_8bit_4x1:inst12|mux_8bit_2x1:inst1
+|sram_8bitx8|mux_8bit_4x1:inst9|mux_8bit_2x1:inst1
 Out[0] <= inst25.DB_MAX_OUTPUT_PORT_TYPE
 Out[1] <= inst24.DB_MAX_OUTPUT_PORT_TYPE
 Out[2] <= inst23.DB_MAX_OUTPUT_PORT_TYPE

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for quartus
-Tue Dec 21 17:29:37 2021
+Wed Dec 22 17:26:12 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Dec 21 17:29:37 2021       ;
+; Analysis & Synthesis Status ; Successful - Wed Dec 22 17:26:12 2021       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; quartus                                     ;
 ; Top-level Entity Name       ; sram_8bitx8                                 ;
@@ -229,8 +229,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |sram_8bitx8|mux_8bit_2x1:inst10|inst10 ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |sram_8bitx8|mux_8bit_2x1:inst13|inst10 ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |sram_8bitx8|mux_8bit_2x1:inst10|inst10 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -240,10 +240,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Dec 21 17:29:30 2021
+    Info: Processing started: Wed Dec 22 17:26:05 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off quartus -c quartus
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file textlcd.v
+    Info (12023): Found entity 1: textLCD File: C:/Users/user/Logic-circuit-and-design/term_project/quartus/textLCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file trigger.bdf
+    Info (12023): Found entity 1: trigger
+Info (12021): Found 1 design units, including 1 entities, in source file cpu_memory.bdf
+    Info (12023): Found entity 1: CPU_MEMORY
 Info (12021): Found 1 design units, including 1 entities, in source file tpj.bdf
     Info (12023): Found entity 1: tpj
 Info (12021): Found 1 design units, including 1 entities, in source file sram_8bitx8.bdf
@@ -256,15 +262,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux_8bi
     Info (12023): Found entity 1: mux_8bit_4x1
 Info (12021): Found 1 design units, including 1 entities, in source file demux.bdf
     Info (12023): Found entity 1: demux
-Info (12021): Found 1 design units, including 1 entities, in source file cpu_memory.bdf
-    Info (12023): Found entity 1: cpu_memory
 Info (12021): Found 1 design units, including 1 entities, in source file block1.bdf
     Info (12023): Found entity 1: Block1
 Info (12021): Found 1 design units, including 1 entities, in source file ascii_to_address.bdf
     Info (12023): Found entity 1: ascii_to_address
 Info (12021): Found 1 design units, including 1 entities, in source file ascii_comparator.bdf
     Info (12023): Found entity 1: ascii_comparator
-Warning (12019): Can't analyze file -- file PROJECT_inst.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file count_8.bdf
     Info (12023): Found entity 1: count_8
 Info (12021): Found 1 design units, including 1 entities, in source file count_4.bdf
@@ -303,8 +306,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file counter
     Info (12023): Found entity 1: counter4
 Info (12021): Found 1 design units, including 1 entities, in source file adder_8bit_2bit.bdf
     Info (12023): Found entity 1: adder_8bit_2bit
-Warning (12019): Can't analyze file -- file test.bdf is missing
-Warning (12019): Can't analyze file -- file quartus.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file counter2.bdf
     Info (12023): Found entity 1: counter2
 Info (12021): Found 1 design units, including 1 entities, in source file or_8bit.bdf
@@ -341,26 +342,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file and_8bi
     Info (12023): Found entity 1: and_8bit_2bit
 Info (12021): Found 1 design units, including 1 entities, in source file sub_module.bdf
     Info (12023): Found entity 1: sub_module
+Info (12021): Found 1 design units, including 1 entities, in source file trigger_8bit.bdf
+    Info (12023): Found entity 1: trigger_8bit
+Info (12021): Found 1 design units, including 1 entities, in source file decre_3bit.bdf
+    Info (12023): Found entity 1: decre_3bit
 Info (12127): Elaborating entity "sram_8bitx8" for the top level hierarchy
-Warning (275083): Bus "CE_out2[2..0]" found using same base name as "CE_out", which might lead to a name conflict.
-Warning (275083): Bus "Out2[7..0]" found using same base name as "Out", which might lead to a name conflict.
-Warning (275083): Bus "CE_out2[2..0]" found using same base name as "CE_out", which might lead to a name conflict.
-Warning (275083): Bus "CE_out2[1..0]" found using same base name as "CE_out", which might lead to a name conflict.
-Warning (275083): Bus "CE_out2[2]" found using same base name as "CE_out", which might lead to a name conflict.
-Warning (275080): Converted elements in bus name "CE_out" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "CE_out[2..0]" to "CE_out2..0"
-Warning (275080): Converted elements in bus name "CE_out2" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "CE_out2[2..0]" to "CE_out22..0"
-Warning (275080): Converted elements in bus name "Out" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "Out[7..0]" to "Out7..0"
-Warning (275080): Converted elements in bus name "Out2" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "Out2[7..0]" to "Out27..0"
-Info (12128): Elaborating entity "mux_8bit_2x1" for hierarchy "mux_8bit_2x1:inst10"
+Info (12128): Elaborating entity "mux_8bit_2x1" for hierarchy "mux_8bit_2x1:inst13"
 Warning (275011): Block or symbol "AND2" of instance "inst2" overlaps another block or symbol
 Warning (275011): Block or symbol "OR2" of instance "inst10" overlaps another block or symbol
 Warning (275011): Block or symbol "OR2" of instance "inst20" overlaps another block or symbol
 Warning (275011): Block or symbol "OR2" of instance "inst23" overlaps another block or symbol
-Info (12128): Elaborating entity "mux_8bit_4x1" for hierarchy "mux_8bit_4x1:inst8"
+Info (12128): Elaborating entity "mux_8bit_4x1" for hierarchy "mux_8bit_4x1:inst11"
 Info (12128): Elaborating entity "reg_8bit_ce" for hierarchy "reg_8bit_ce:inst"
 Info (12128): Elaborating entity "mx_2x1" for hierarchy "reg_8bit_ce:inst|mx_2x1:inst10"
 Info (12128): Elaborating entity "demux" for hierarchy "demux:inst99"
@@ -368,9 +360,9 @@ Info (21057): Implemented 188 device resources after synthesis - the final resou
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 16 output pins
     Info (21061): Implemented 152 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4722 megabytes
-    Info: Processing ended: Tue Dec 21 17:29:37 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4724 megabytes
+    Info: Processing ended: Wed Dec 22 17:26:12 2021
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:14
 

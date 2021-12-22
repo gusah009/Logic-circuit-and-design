@@ -19,18 +19,19 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/07/2021 20:57:51"
+// Generated on "12/21/2021 19:14:50"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          decimal_to_alphabet
+// Verilog Test Bench (with test vectors) for design :                          INPUT_MODULE
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module decimal_to_alphabet_vlg_vec_tst();
+module INPUT_MODULE_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg clk;
+reg dip_switch;
 reg eight;
 reg five;
 reg four;
@@ -44,26 +45,19 @@ reg three;
 reg two;
 reg zero;
 // wires                                               
-wire [7:0] alphabet;
-wire [7:0] pin_name1;
-wire [7:0] pin_name2;
-wire [7:0] pin_name3;
-wire [7:0] pin_name4;
+wire [7:0] res;
 
 // assign statements (if any)                          
-decimal_to_alphabet i1 (
+INPUT_MODULE i1 (
 // port map - connection between master ports and signals/registers   
-	.alphabet(alphabet),
 	.clk(clk),
+	.dip_switch(dip_switch),
 	.eight(eight),
 	.five(five),
 	.four(four),
 	.nine(nine),
 	.one(one),
-	.pin_name1(pin_name1),
-	.pin_name2(pin_name2),
-	.pin_name3(pin_name3),
-	.pin_name4(pin_name4),
+	.res(res),
 	.rst(rst),
 	.seven(seven),
 	.sharp(sharp),
@@ -77,12 +71,58 @@ begin
 #1000000 $finish;
 end 
 
+// eight
+initial
+begin
+	eight = 1'b0;
+end 
+
+// five
+initial
+begin
+	five = 1'b0;
+end 
+
+// four
+initial
+begin
+	four = 1'b0;
+end 
+
+// nine
+initial
+begin
+	nine = 1'b0;
+	nine = #550000 1'b1;
+	nine = #60000 1'b0;
+end 
+
+// one
+initial
+begin
+	one = 1'b0;
+	one = #30000 1'b1;
+	one = #40000 1'b0;
+	one = #50000 1'b1;
+	one = #50000 1'b0;
+	one = #160000 1'b1;
+	one = #50000 1'b0;
+end 
+
 // clk
 always
 begin
 	clk = 1'b0;
-	clk = #20000 1'b1;
-	#20000;
+	clk = #10000 1'b1;
+	#10000;
+end 
+
+// dip_switch
+initial
+begin
+	dip_switch = 1'b0;
+	dip_switch = #530000 1'b1;
+	dip_switch = #120000 1'b0;
 end 
 
 // rst
@@ -91,30 +131,22 @@ begin
 	rst = 1'b1;
 end 
 
-// one
+// seven
 initial
 begin
-	one = 1'b0;
-	one = #10000 1'b1;
-	one = #40000 1'b0;
-	one = #50000 1'b1;
-	one = #30000 1'b0;
-	one = #370000 1'b1;
-	one = #60000 1'b0;
-	one = #20000 1'b1;
-	one = #60000 1'b0;
-	one = #20000 1'b1;
-	one = #60000 1'b0;
-	one = #20000 1'b1;
-	one = #60000 1'b0;
+	seven = 1'b0;
 end 
 
-// two
+// sharp
 initial
 begin
-	two = 1'b0;
-	two = #50000 1'b1;
-	two = #40000 1'b0;
+	sharp = 1'b0;
+end 
+
+// six
+initial
+begin
+	six = 1'b0;
 end 
 
 // three
@@ -123,66 +155,18 @@ begin
 	three = 1'b0;
 end 
 
-// four
+// two
 initial
 begin
-	four = 1'b0;
-	four = #140000 1'b1;
-	four = #50000 1'b0;
-end 
-
-// five
-initial
-begin
-	five = 1'b0;
-	five = #190000 1'b1;
-	five = #40000 1'b0;
-end 
-
-// six
-initial
-begin
-	six = 1'b0;
-	six = #230000 1'b1;
-	six = #40000 1'b0;
-end 
-
-// seven
-initial
-begin
-	seven = 1'b0;
-	seven = #280000 1'b1;
-	seven = #60000 1'b0;
-end 
-
-// eight
-initial
-begin
-	eight = 1'b0;
-	eight = #370000 1'b1;
-	eight = #40000 1'b0;
-end 
-
-// nine
-initial
-begin
-	nine = 1'b0;
-	nine = #440000 1'b1;
-	nine = #50000 1'b0;
+	two = 1'b0;
 end 
 
 // zero
 initial
 begin
 	zero = 1'b0;
-	zero = #440000 1'b1;
-	zero = #50000 1'b0;
-end 
-
-// sharp
-initial
-begin
-	sharp = 1'b0;
+	zero = #190000 1'b1;
+	zero = #120000 1'b0;
 end 
 endmodule
 

@@ -19,52 +19,44 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "12/19/2021 17:41:47"
+// Generated on "12/21/2021 19:27:47"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          INPUT_MODULE
+// Verilog Test Bench (with test vectors) for design :                          RAM_5
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module INPUT_MODULE_vlg_vec_tst();
+module RAM_5_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg [2:0] CE_in;
 reg clk;
-reg dip_switch;
-reg eight;
-reg five;
-reg four;
-reg nine;
-reg one;
+reg [7:0] Din;
+reg reg_ce;
 reg rst;
-reg seven;
 reg sharp;
-reg six;
-reg three;
-reg two;
-reg zero;
 // wires                                               
-wire [7:0] res;
+wire [7:0] reg_out0;
+wire [7:0] reg_out1;
+wire [7:0] reg_out2;
+wire [7:0] reg_out3;
+wire [7:0] reg_out4;
 
 // assign statements (if any)                          
-INPUT_MODULE i1 (
+RAM_5 i1 (
 // port map - connection between master ports and signals/registers   
+	.CE_in(CE_in),
 	.clk(clk),
-	.dip_switch(dip_switch),
-	.eight(eight),
-	.five(five),
-	.four(four),
-	.nine(nine),
-	.one(one),
-	.res(res),
+	.Din(Din),
+	.reg_ce(reg_ce),
+	.reg_out0(reg_out0),
+	.reg_out1(reg_out1),
+	.reg_out2(reg_out2),
+	.reg_out3(reg_out3),
+	.reg_out4(reg_out4),
 	.rst(rst),
-	.seven(seven),
-	.sharp(sharp),
-	.six(six),
-	.three(three),
-	.two(two),
-	.zero(zero)
+	.sharp(sharp)
 );
 initial 
 begin 
@@ -78,69 +70,108 @@ begin
 	clk = #10000 1'b1;
 	#10000;
 end 
-
-// dip_switch
+// CE_in[ 2 ]
 initial
 begin
-	dip_switch = 1'b0;
-	dip_switch = #230000 1'b1;
-	dip_switch = #230000 1'b0;
+	CE_in[2] = 1'b0;
+	CE_in[2] = #180000 1'b1;
+	CE_in[2] = #40000 1'b0;
+end 
+// CE_in[ 1 ]
+initial
+begin
+	CE_in[1] = 1'b0;
+	CE_in[1] = #180000 1'b1;
+	CE_in[1] = #40000 1'b0;
+	CE_in[1] = #130000 1'b1;
+	CE_in[1] = #130000 1'b0;
+end 
+// CE_in[ 0 ]
+initial
+begin
+	CE_in[0] = 1'b0;
+	CE_in[0] = #350000 1'b1;
+	CE_in[0] = #130000 1'b0;
+end 
+// Din[ 7 ]
+initial
+begin
+	Din[7] = 1'b0;
+end 
+// Din[ 6 ]
+initial
+begin
+	Din[6] = 1'b0;
+	Din[6] = #60000 1'b1;
+	Din[6] = #50000 1'b0;
+	Din[6] = #80000 1'b1;
+	Din[6] = #20000 1'b0;
+	Din[6] = #160000 1'b1;
+	Din[6] = #80000 1'b0;
+end 
+// Din[ 5 ]
+initial
+begin
+	Din[5] = 1'b0;
+	Din[5] = #60000 1'b1;
+	Din[5] = #50000 1'b0;
+	Din[5] = #80000 1'b1;
+	Din[5] = #20000 1'b0;
+	Din[5] = #160000 1'b1;
+	Din[5] = #80000 1'b0;
+end 
+// Din[ 4 ]
+initial
+begin
+	Din[4] = 1'b0;
+	Din[4] = #60000 1'b1;
+	Din[4] = #50000 1'b0;
+	Din[4] = #80000 1'b1;
+	Din[4] = #20000 1'b0;
+	Din[4] = #160000 1'b1;
+	Din[4] = #80000 1'b0;
+end 
+// Din[ 3 ]
+initial
+begin
+	Din[3] = 1'b0;
+	Din[3] = #60000 1'b1;
+	Din[3] = #50000 1'b0;
+	Din[3] = #80000 1'b1;
+	Din[3] = #20000 1'b0;
+	Din[3] = #160000 1'b1;
+	Din[3] = #80000 1'b0;
+end 
+// Din[ 2 ]
+initial
+begin
+	Din[2] = 1'b0;
+	Din[2] = #190000 1'b1;
+	Din[2] = #20000 1'b0;
+	Din[2] = #160000 1'b1;
+	Din[2] = #80000 1'b0;
+end 
+// Din[ 1 ]
+initial
+begin
+	Din[1] = 1'b0;
+	Din[1] = #190000 1'b1;
+	Din[1] = #20000 1'b0;
+end 
+// Din[ 0 ]
+initial
+begin
+	Din[0] = 1'b0;
 end 
 
-// eight
+// reg_ce
 initial
 begin
-	eight = 1'b0;
-end 
-
-// five
-initial
-begin
-	five = 1'b0;
-end 
-
-// four
-initial
-begin
-	four = 1'b0;
-end 
-
-// nine
-initial
-begin
-	nine = 1'b0;
-end 
-
-// one
-initial
-begin
-	one = 1'b0;
-	one = #10000 1'b1;
-	one = #40000 1'b0;
-	one = #20000 1'b1;
-	one = #40000 1'b0;
-	one = #20000 1'b1;
-	one = #30000 1'b0;
-	one = #30000 1'b1;
-	one = #40000 1'b0;
-	one = #20000 1'b1;
-	one = #30000 1'b0;
-	one = #20000 1'b1;
-	one = #30000 1'b0;
-	one = #30000 1'b1;
-	one = #70000 1'b0;
-end 
-
-// rst
-initial
-begin
-	rst = 1'b1;
-end 
-
-// seven
-initial
-begin
-	seven = 1'b0;
+	reg_ce = 1'b0;
+	reg_ce = #40000 1'b1;
+	reg_ce = #80000 1'b0;
+	reg_ce = #50000 1'b1;
+	reg_ce = #420000 1'b0;
 end 
 
 // sharp
@@ -149,38 +180,10 @@ begin
 	sharp = 1'b0;
 end 
 
-// six
+// rst
 initial
 begin
-	six = 1'b0;
-	six = #430000 1'b1;
-	six = #30000 1'b0;
-end 
-
-// three
-initial
-begin
-	three = 1'b0;
-end 
-
-// two
-initial
-begin
-	two = 1'b0;
-	two = #510000 1'b1;
-	two = #60000 1'b0;
-	two = #30000 1'b1;
-	two = #70000 1'b0;
-	two = #40000 1'b1;
-	two = #70000 1'b0;
-	two = #50000 1'b1;
-	two = #60000 1'b0;
-end 
-
-// zero
-initial
-begin
-	zero = 1'b0;
+	rst = 1'b1;
 end 
 endmodule
 
